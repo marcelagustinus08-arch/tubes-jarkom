@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; }
-        .glow-image {
-            box-shadow: 0 0 30px rgba(34, 211, 238, 0.6), inset 0 0 20px rgba(34, 211, 238, 0.4);
-        }
+        .glow-image { box-shadow: 0 0 30px rgba(34, 211, 238, 0.6), inset 0 0 20px rgba(34, 211, 238, 0.4); }
+        @keyframes float-sleek { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+        .animate-float-sleek { animation: float-sleek 8s ease-in-out infinite; }
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
     </style>
 </head>
 
@@ -20,106 +22,102 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="order-2 lg:order-1 text-center lg:text-left space-y-6">
                 <div>
-                    <h3 class="text-cyan-400 font-bold text-xl mb-2 tracking-wide uppercase">Tugas Jaringan Komputer</h3>
+                    <h3 class="text-cyan-400 font-bold text-xl mb-2 tracking-wide uppercase italic">Tugas Jaringan Komputer</h3>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
                         Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Marcel Agustinus</span>
                     </h1>
                 </div>
-                <div class="bg-gray-900/50 p-6 rounded-2xl border border-gray-800 backdrop-blur-sm inline-block text-left border-l-4 border-l-cyan-500">
+                <div class="bg-gray-900/50 p-6 rounded-2xl border border-gray-800 backdrop-blur-sm inline-block text-left border-l-4 border-l-cyan-500 hover:border-cyan-300 transition-all duration-300">
                     <ul class="space-y-3 text-lg">
                         <li class="flex items-center">NIM: <span class="font-semibold text-white ml-2">607012500076</span></li>
                         <li class="flex items-center">Kelas: <span class="font-semibold text-white ml-2">4904</span></li>
-                        <li class="flex items-center">Prodi: <span class="font-semibold text-white ml-2">Sistem Informasi</span></li>
+                        <li class="flex items-center">Prodi: <span class="font-semibold text-white ml-2 text-sm sm:text-lg">D3 Sistem Informasi</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="order-1 lg:order-2 flex justify-center">
-                <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full p-2 glow-image border-2 border-cyan-400">
+            <div class="order-1 lg:order-2 flex justify-center z-10">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full p-2 glow-image border-2 border-cyan-400/70 animate-float-sleek">
                     <img src="WhatsApp Image 2025-12-26 at 23.27.00.jpeg" alt="Foto Marcel" class="w-full h-full object-cover rounded-full border-4 border-gray-950">
                 </div>
             </div>
         </div>
 
         <div class="bg-gray-900 rounded-3xl p-8 sm:p-12 border border-gray-800 shadow-2xl relative overflow-hidden mb-12">
-            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-10 animate-pulse"></div>
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-10 animate-pulse animate-spin-slow"></div>
             
-            <h2 class="text-3xl font-bold text-white mb-10 flex items-center">
-                <span class="bg-cyan-500 w-2 h-8 mr-4 rounded-full"></span>
-                Pembahasan Perangkat Jaringan
+            <h2 class="relative z-10 text-3xl font-bold text-white mb-10 flex items-center">
+                <span class="bg-cyan-500 w-2 h-8 mr-4 rounded-full"></span> Pembahasan Perangkat
             </h2>
 
-            <div class="grid grid-cols-1 gap-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-gray-800 pb-10">
+            <div class="relative z-10 grid grid-cols-1 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-gray-800 pb-10 group">
                     <div class="space-y-4 text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-cyan-400 italic tracking-wider">01. Router Wireless</h3>
-                        <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
-                            <p class="text-gray-300">Perangkat perantara (intermediary device) yang menghubungkan jaringan lokal (LAN) ke internet dan mengarahkan paket data antar jaringan.</p>
+                        <h3 class="text-2xl font-bold text-cyan-400 italic tracking-wider group-hover:text-cyan-200 transition-colors">01. Router Wireless</h3>
+                        <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700 group-hover:border-cyan-500/50 transition-all">
+                            <p class="text-gray-300">Perangkat perantara yang menghubungkan jaringan lokal (LAN) ke internet.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-800/80 p-4 rounded-2xl border border-gray-700">
-                        <img src="d9c1d18cec20b6b99801cad9b86f2ee1.jpg" alt="Router Wireless Cisco" class="rounded-xl w-full object-contain max-h-48 shadow-lg shadow-cyan-500/10">
+                    <div class="bg-gray-800/80 p-4 rounded-2xl border border-gray-700 overflow-visible flex justify-center transition-all group-hover:bg-gray-900">
+                        <img src="d9c1d18cec20b6b99801cad9b86f2ee1.jpg" class="rounded-xl w-full object-contain max-h-48 shadow-lg shadow-cyan-500/10 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-3 group-hover:shadow-[0_15px_40px_rgba(34,211,238,0.4)]">
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-gray-800 pb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-gray-800 pb-10 group">
                     <div class="space-y-4 text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-cyan-400 italic tracking-wider">02. Switch Networking</h3>
-                        <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
-                            <p class="text-gray-300">Berfungsi untuk menghubungkan berbagai perangkat dalam satu jaringan LAN yang sama dan mengirim data secara efisien berdasarkan alamat MAC perangkat.</p>
+                        <h3 class="text-2xl font-bold text-cyan-400 italic tracking-wider group-hover:text-cyan-200 transition-colors">02. Switch Networking</h3>
+                        <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700 group-hover:border-cyan-500/50 transition-all">
+                            <p class="text-gray-300">Menghubungkan berbagai perangkat dalam satu jaringan LAN yang sama.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-800/80 p-4 rounded-2xl border border-gray-700">
-                        <img src="6ed0d7ec97db1465013885ccb444a3dc.jpg" alt="Switch Networking" class="rounded-xl w-full object-contain max-h-48 shadow-lg shadow-cyan-500/10">
+                    <div class="bg-gray-800/80 p-4 rounded-2xl border border-gray-700 overflow-visible flex justify-center transition-all group-hover:bg-gray-900">
+                        <img src="6ed0d7ec97db1465013885ccb444a3dc.jpg" class="rounded-xl w-full object-contain max-h-48 shadow-lg shadow-cyan-500/10 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-3 group-hover:shadow-[0_15px_40px_rgba(34,211,238,0.4)]">
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center group">
                     <div class="space-y-4 text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-cyan-400 italic tracking-wider">03. Access Point</h3>
-                        <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
-                            <p class="text-gray-300">Menyediakan konektivitas nirkabel (Wi-Fi) sehingga perangkat nirkabel dapat terhubung ke jaringan kabel lokal melalui sinyal radio.</p>
+                        <h3 class="text-2xl font-bold text-cyan-400 italic tracking-wider group-hover:text-cyan-200 transition-colors">03. Access Point</h3>
+                        <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700 group-hover:border-cyan-500/50 transition-all">
+                            <p class="text-gray-300">Menyediakan konektivitas nirkabel (Wi-Fi) ke jaringan kabel lokal.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-800/80 p-4 rounded-2xl border border-gray-700">
-                        <img src="f3fe0f44-b6b1-44e3-93f0-0ed43afc39c7.png" alt="Access Point" class="rounded-xl w-full object-contain max-h-48 shadow-lg shadow-cyan-500/10">
+                    <div class="bg-gray-800/80 p-4 rounded-2xl border border-gray-700 overflow-visible flex justify-center transition-all group-hover:bg-gray-900">
+                        <img src="f3fe0f44-b6b1-44e3-93f0-0ed43afc39c7.png" class="rounded-xl w-full object-contain max-h-48 shadow-lg shadow-cyan-500/10 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-3 group-hover:shadow-[0_15px_40px_rgba(34,211,238,0.4)]">
                     </div>
                 </div>
             </div>
 
-            <div class="mt-12 pt-8 border-t border-gray-800">
-                <h4 class="text-sm font-bold text-cyan-500 uppercase tracking-widest mb-4 flex items-center gap-2 italic">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                    Sumber Referensi
-                </h4>
-                <ul class="text-[10px] sm:text-xs text-gray-500 space-y-1 leading-relaxed italic">
-                    <li>1. Cisco Networking Academy. (2025). <span class="text-gray-400 italic">Introduction to Networks Companion Guide v7.0.</span></li>
-                    <li>2. Cisco Systems Inc. Documentation. (2025). <span class="text-gray-400 italic">Wireless LAN Switching and AP Configuration.</span></li>
-                    <li>3. Wikimedia Commons. <span class="text-gray-400 italic">Perangkat Router, Switch, dan Access Point Hardware Images.</span></li>
-                </ul>
-            </div>
+            <div class="text-center border-t border-gray-800 mt-12 pt-10 relative z-10 space-y-10">
+                
+                <div class="flex justify-center gap-8 items-center">
+                    <a href="https://www.linkedin.com/in/marcel-agustinus-hutahaean-33946a38a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_appa" target="_blank" class="group flex flex-col items-center gap-2">
+                        <div class="bg-gray-800 p-4 rounded-2xl border border-gray-700 group-hover:border-blue-500 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 transform group-hover:-translate-y-2">
+                            <svg class="h-6 w-6 text-gray-400 group-hover:text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-500 group-hover:text-blue-400">LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/znnagstinus_?igsh=ZWNobHRmdXlzNTM1" target="_blank" class="group flex flex-col items-center gap-2">
+                        <div class="bg-gray-800 p-4 rounded-2xl border border-gray-700 group-hover:border-pink-500 group-hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-all duration-300 transform group-hover:-translate-y-2">
+                            <svg class="h-6 w-6 text-gray-400 group-hover:text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-500 group-hover:text-pink-400">Instagram</span>
+                    </a>
+                </div>
 
-            <div class="text-center border-t border-gray-800 mt-12 pt-10">
-                <h3 class="text-xl font-bold text-white mb-8 tracking-wide uppercase text-sm">Lampiran Tutorial (PDF)</h3>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="Hosting_web.pdf" download class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-cyan-400 transition-all duration-200 bg-gray-950 border-2 border-cyan-500/50 rounded-full hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-cyan-400 hover:bg-gray-900">
-                        Tutorial Hosting Web
-                    </a>
-                    <a href="Isi_website.pdf" download class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-cyan-400 transition-all duration-200 bg-gray-950 border-2 border-cyan-500/50 rounded-full hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-cyan-400 hover:bg-gray-900">
-                        Tutorial Isi Website
-                    </a>
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
+                        <a href="Hosting_web.pdf" download class="px-8 py-3 font-bold text-cyan-400 border-2 border-cyan-500/50 rounded-full hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all italic">Tutorial Hosting Web</a>
+                        <a href="Isi_website.pdf" download class="px-8 py-3 font-bold text-cyan-400 border-2 border-cyan-500/50 rounded-full hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all italic">Tutorial Isi Website</a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 
     <footer class="w-full pb-12 mt-auto">
-        <div class="flex flex-col items-center justify-center">
-            <div class="border-t border-gray-800 pt-8 w-64 sm:w-80 text-center">
-                <p class="text-gray-500 text-[10px] sm:text-xs tracking-[0.4em] font-bold uppercase italic hover:text-cyan-400 transition-colors duration-300">
-                    @TUBES JARKOM 2025
-                </p>
-                <div class="mt-2 h-0.5 w-full bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent rounded-full"></div>
-            </div>
+        <div class="flex flex-col items-center justify-center border-t border-gray-800 pt-8">
+            <p class="text-gray-500 text-[10px] sm:text-xs tracking-[0.4em] font-bold uppercase italic">@TUBESJARKOM2025</p>
         </div>
     </footer>
 
